@@ -47,15 +47,13 @@ st.divider()
 if st.button("🔍 Predict House Price", use_container_width=True, type="primary"):
     # Build input — adjust column order to match your training features
     features = np.array([[
-        square_footage,
-        num_bedrooms,
-        num_bathrooms,
-        garage_size,
-        neighborhood_quality,
-        year_built,
-        distance_to_city,
-        house_age
-    ]])
+    square_footage,
+    num_bedrooms,
+    num_bathrooms,
+    year_built,
+    distance_to_city,
+    garage_size,
+    neighborhood_quality]])
 
     features_scaled = scaler.transform(features)
     log_price       = model.predict(features_scaled)[0]
